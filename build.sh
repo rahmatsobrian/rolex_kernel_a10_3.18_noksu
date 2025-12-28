@@ -11,8 +11,8 @@ KERN_IMG="${WORK_DIR}/out/arch/arm64/boot/Image-gz.dtb"
 KERN_IMG2="${WORK_DIR}/out/arch/arm64/boot/Image.gz"
 
 # PATH toolchain GCC 4.9 (pakai path relatif, aman untuk GitHub Actions)
-TC64="$(pwd)/linegcc49/bin/aarch64-linux-android-"
-TC32="$(pwd)/linegcc49/bin/arm-linux-androideabi-"
+TC64="$(pwd)/linegcc49pre/bin/aarch64-linux-android-"
+TC32="$(pwd)/linegcc49pre/bin/arm-linux-androideabi-"
 
 function build_kernel() {
     echo -e "\n"
