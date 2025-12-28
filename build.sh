@@ -43,7 +43,7 @@ IMG_USED="unknown"
 clone_anykernel() {
     if [ ! -d "$ANYKERNEL_DIR" ]; then
         echo -e "$yellow[+] Cloning AnyKernel3...$white"
-        git clone https://github.com/osm0sis/AnyKernel3.git "$ANYKERNEL_DIR" || exit 1
+        git clone https://github.com/rahmatsobrian/AnyKernel3.git "$ANYKERNEL_DIR" || exit 1
     fi
 }
 
