@@ -32,14 +32,20 @@ jobs:
             libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zlib1g-dev \
             libncurses5-dev bzip2 gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf \
             gcc-arm-linux-gnueabi dos2unix kmod
-          
-      - name: Setup GCC 4.9 Prerelease Toolchain
+
+      - name: Setup GCC 4.9 Toolchain
         run: |
-          git clone https://github.com/dandelion64-Archives/aarch64-linux-android-4.9.git linegcc49pre
-          
+          git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git linegcc49
+
       - name: Start Build
         run: |
           bash build.sh
+
+      - name: Upload AnyKernel Zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: anykernel-zip
+          path: AnyKernel/*.zip
 
       - name: Upload Kernel Image
         uses: actions/upload-artifact@v4
